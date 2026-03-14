@@ -1,0 +1,117 @@
+body{
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 0;
+}
+
+.header-table {
+    width: 100%;
+    background-color: #282b30;
+    border-collapse: collapse;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+}
+
+.header-table td {
+    text-align: center;
+    padding: 15px;
+    width: 20%;
+}
+
+.header-table a {
+    color: white;
+    text-decoration: none; 
+    display: block;
+    width: 100%;
+}
+
+.header-table td:hover {
+    background-color: #393645; 
+    cursor: pointer; 
+}
+
+.header-table td:active {
+    background-color: #7289da; 
+}
+
+.pokemon-container {
+    width: 100%; 
+    height: auto; 
+    padding: 50px 0;
+    align-items: center;
+}
+
+.content-table {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.img-cell img {
+    width: 500px; 
+    height: 500px; 
+    object-fit: contain;
+}
+
+.desc-cell {
+    text-align: center;
+}
+
+.status-table {
+    width: 100%;
+    border-collapse: collapse; 
+    font-family: cursive; 
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.status-table td {
+    padding: 8px;
+}
+
+.status-table td:first-child {
+    width: 40%;
+    font-weight: bold;
+}
+
+.type-btn, .element-btn {
+    width: 250px; 
+    height: 50px; 
+    border-radius: 100px; 
+    border: 1px solid black; 
+    font-weight: bold; 
+    margin: 5px auto;
+    font-size: 24px;
+}
+
+.type-btn {
+    background-color: #282b30; 
+    color: white;
+    display: block; 
+}
+
+.element-btn { color: white; }
+
+.element-btn:hover {
+    background-color: white !important; 
+    color: black !important; 
+}
+
+.char-bg { background-color: #fe9441; } 
+.fire-btn { background-color: #f24405; } 
+
+.squirt-bg { background-color: #93c8d0; } 
+.water-btn { background-color: #2389da; } 
+
+.bulb-bg { background-color: #83ba36; } 
+.grass-btn { background-color: #107800; }
+.poison-btn { background-color: #7b63ad; }
+
+footer p {
+    font-size: 20px; 
+    text-align: center; 
+    font-weight: bold; 
+    color: #333;
+    padding: 20px;
+}

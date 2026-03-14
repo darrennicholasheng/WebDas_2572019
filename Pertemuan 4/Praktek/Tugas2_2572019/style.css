@@ -1,0 +1,118 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #1e1f22;
+}
+
+.kartu{
+    width: 340px; 
+    background-color: #2b2d31; 
+    border-radius: 10px; 
+    margin: 40px auto; 
+    overflow: hidden;
+    color: #dbdee1;
+    padding-bottom: 20px;
+}
+
+.banner{
+    background-color: #4a7fa5;
+    height: 80px;
+    border-radius: 10px  10px 0 0;
+}
+
+.avatar{
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    border: 4px solid #2b2d31;
+    margin-top: -36px;
+    line-height: 72px;
+    text-align:center;
+    font-size: 30px;
+    background-color: rgb(137, 247, 255);
+    margin-left: 10px;
+}
+
+.profile{
+    padding: 15px;
+}
+
+.usn{
+    font-size: 18px; 
+    font-weight: bold; 
+    color: #ffffff; 
+}
+
+.prof2 {
+    font-size: 13px;
+    color: #80848e;
+    margin-bottom: 10px;
+}
+
+hr {
+    border: none; 
+    border-top: 1px solid #3f4147; 
+    margin: 15px 0;
+}
+
+.memnote{
+    font-size: 12px;
+    font-weight: bold;
+    color: #dbdee1; 
+    margin-top: 10px;
+}
+
+.desc{
+    color:#80848e;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.bungkus{
+    border-top:1px solid #3f4147;
+    padding-top: 15px;
+}
+
+.recent{
+    font-size: 11px;
+    font-weight: bold;
+    color: #b5bac1;
+    margin: 15px 0 10px 0;
+}
+
+.tab-aktif{
+    font-weight: bold; 
+    color: #ffffff; 
+    border-bottom: 2px solid #ffffff; 
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+.game-item{
+    background-color: #1e1f22;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.game-ikon{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.game-nama{
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 50px;
+    margin-top: -40px;
+}
+
+.game-waktu {
+    font-size: 12px; 
+    color: #80848e; 
+    margin-left: 50px; 
+}

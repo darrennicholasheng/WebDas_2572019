@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+nav {
+    background-color: #0d0d0d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #e50914;
+    font-weight: bold;
+    padding: 20px;
+}
+
+nav a {
+    color: white;    
+    text-decoration: none;
+    gap: 20px;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+button {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    margin: 20px;
+    padding: 8px 20px;
+}
+
+.hero {
+    background-color: #141414;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 80px 40px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero button {
+    background-color: #e50914;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 14px;
+    align-self: flex-start;
+}
+
+.films-section {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px;
+}
+
+.films-section h2 {
+    margin-bottom: 20px;
+}
+
+.films-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.film-card {
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.poster {
+    height: 160px;
+    background: linear-gradient(to bottom, #333, #111);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.info {
+    padding: 12px;
+}
+
+.film-card :hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+footer {
+    background-color: #0d0d0d;
+    color: #666;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .films-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .btn-login {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .films-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-login {
+        display: none;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+}

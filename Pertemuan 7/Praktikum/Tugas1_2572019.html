@@ -1,0 +1,173 @@
+<!--[2572019]-[Darren Nicholas Heng]-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSkill - [2572019]</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            background-color: #f8f9fa;
+        }
+
+        .hero-section {
+            padding: 100px 20px;
+        }
+
+        .navbar .navbar-nav {
+            gap: 1rem;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            transition-duration: 0.3s;
+        }
+
+        @media (max-width: 900px) {
+            .col-4 {
+                width: 50%;
+                flex: 0 0 auto;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .col-4 {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar .container-fluid{
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .navbar-brand {
+                margin-left: 0 !important;
+            }
+
+            .hero-section {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white py-2">
+        <div class="container-fluid d-flex flex-column flex-lg-row align-items-center align-items-lg-start justify-content-between gap-3 gap-lg-0">
+            <div class="navbar-brand text-primary fw-bold ms-4">EduSkill</div>
+            <div class="navbar-nav d-flex align-items-center justify-content-center gap-3">
+                <a class="nav-link nav-item" href="#">Beranda</a>
+                <a class="nav-link nav-item" href="#">Daftar Kelas</a>
+                <a class="nav-link nav-item" href="#">Mentor</a>
+            </div>
+            <button class="btn btn-primary text-white px-4 py-2 me-4 d-none d-lg-block">Daftar Sekarang</button>
+        </div>            
+    </nav>
+    <section class="bg-primary text-white text-center hero-section">
+        <div class="container">
+            <h1 class="fw-bold pb-2">Tingkatkan Karirmu di Dunia Digital</h1>
+            <p class="fw-light pb-3">Akses ratusan materi pembelajaran dari mentor berpengalaman di industri.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary bg-white text-primary fw-bold">Jelajahi Kelas</button>
+                <button class="btn btn-outline-light">Pelajari Sistemnya</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="text-center p-5">
+            <h2 class="fw-bold">Kelas Populer Bulan Ini</h2>
+            <p class="text-secondary pb-4">Pilih kelas yang sesuai dengan minatmu</p>
+        </div>
+
+        
+        <div class="container-fluid row"> 
+            <div class="col-4 mb-5">
+                <div class="card shadow">
+                    <span class="badge text-bg-success me-auto ms-3 mt-2 p-2">Pemula</span>
+                    <div class="card-body pt-2">
+                        <h4 class="card-title fw-bold">Fullstack Web Development</h4>
+                        <p class="card-text text-secondary">Belajar membuat website dari nol menggunakan HTML, CSS, JS, dan PHP.</p>
+                        <span class="card-text text-primary fw-bold">Rp 499.000</span>
+                    </div> 
+                    <button class="btn btn-outline-primary me-3 ms-3 mb-2">Lihat Silabus</button>
+                </div>
+            </div>
+                  
+            <div class="col-4 mb-5">
+                <div class="card shadow">
+                    <span class="badge text-bg-warning me-auto ms-3 mt-2 p-2">Menengah</span>
+                    <div class="card-body pt-2">
+                        <h4 class="card-title fw-bold">Data Analytics for Business</h4>
+                        <p class="card-text text-secondary">Kuasai pengolahan data menggunakan Python dan buat visualisasi menarik.</p>
+                        <span class="card-text text-primary fw-bold">Rp 599.000</span>
+                    </div> 
+                    <button class="btn btn-outline-primary me-3 ms-3 mb-2">Lihat Silabus</button>
+                </div>
+            </div>
+
+            <div class="col-4 mb-5">
+                <div class="card shadow">
+                    <span class="badge text-bg-success me-auto ms-3 mt-2 p-2">Pemula</span>
+                    <div class="card-body pt-2">
+                        <h4 class="card-title fw-bold">UI/UX Design Mastery</h4>
+                        <p class="card-text text-secondary">Pahami riset pengguna dan buat desain antarmuka aplikasi menggunakan Figma.</p>
+                        <span class="card-text text-primary fw-bold">Rp 450.000</span>
+                    </div>
+                    <button class="btn btn-outline-primary me-3 ms-3 mb-2">Lihat Silabus</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid text-center bg-white">
+        <h3 class="fw-bold mb-4">Apa Kata Mereka?</h3>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <p class="fst-italic">Berkat kelas UI/UX, saya berhasil mendapatkan pekerjaan pertama saya sebagai desainer</p>
+                    <h6 class="fw-bold">- Sara, UI Designer</h6>
+                </div>
+
+                <div class="carousel-item">
+                    <p class="fst-italic">Berkat kelas UI/UX, saya berhasil mendapatkan pekerjaan pertama saya sebagai desainer</p>
+                    <h6 class="fw-bold">- Sara, UI Designer</h6>
+                </div>
+
+                <div class="carousel-item">
+                    <p class="fst-italic">Berkat kelas UI/UX, saya berhasil mendapatkan pekerjaan pertama saya sebagai desainer</p>
+                    <h6 class="fw-bold">- Sara, UI Designer</h6>
+                </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>                
+    </section>    
+    <footer class="container-fluid bg-white my-4 text-center">
+        <p>&copy; 2026 [2572019] [Darren Nicholas Heng]. All rights reserved.</p>
+    </footer>
+</body>
+</html>

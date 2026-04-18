@@ -1,0 +1,252 @@
+<!--[2572019]-[Darren Nicholas Heng]-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECommerce - [2572019]</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <style>
+      *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .cover{ 
+            min-height: 500px; 
+            background: #6F8DFA;
+            background: linear-gradient(156deg,rgba(111, 141, 250, 1) 0%, rgba(167, 119, 227, 1) 100%);
+            background-size: 100% ; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        } 
+
+        .icon {
+            font-size: 150px;
+        }
+
+        .car-icon {
+            font-size: 100px;
+        }
+
+        .card-price{
+            font-size: 20px;
+        }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15); 
+        }
+
+        @media (max-width: 900px) {
+            .col-4 {
+                width: 50%;
+                flex: 0 0 auto;
+            }
+        }
+
+         @media (max-width: 600px) {
+            .col-4 {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+         }
+         
+    </style>
+
+</head>
+<body>
+    
+    <nav class="navbar bg-dark navbar-expand-lg py-2">
+        <div class="container-fluid d-flex flex-column flex-lg-row align-items-center align-items-lg-start justify-content-between gap-3 gap-lg-0">
+            <div class="navbar-brand text-white fw-bold ms-4">⚙️ TechStore</div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+                    <li class="nav-item">
+                        <a class="text-secondary nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="text-secondary nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#produk">Laptop</a></li>
+                            <li><a class="dropdown-item" href="#produk">Phone</a></li>
+                            <li><a class="dropdown-item" href="#produk">Headphone</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#produk">More Peripherals</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-secondary nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-secondary nav-link" href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-outline-info px-4 py-2 me-4 d-none d-lg-block">🕭 Enable Notifications</button>
+        </div>          
+    </nav>
+
+    <section class="text-white cover d-flex">
+        <div class="container row">
+            <div class="col-6"> 
+                <span class="badge text-bg-light mb-3 pb-2">New Arrivals 2025</span>
+                <h1 class="fw-bold">Upgrade Your Tech.</h1>
+                <h1 class="fw-bold mb-3">Uprgrade Your Life.</h1>
+                <p class="fw-light pb-3">The latest gadgets, best prices, and free delivery on all orders above Rp 500.000</p>
+                <div class="hero-buttons">
+                    <button class="btn bg-white text-black fw-bold">Shop Now</button>
+                    <button class="btn btn-outline-light">Learn More</button>
+                </div>
+            </div>
+            <div class="col-6">
+                <h1 class="text-center icon">💻</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <h2 class="mb-4 fw-bold">Promo Terbaru</h2>
+        <section class="text-center">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active text-bg-warning rounded-3 p-5">
+                        <h5 class="car-icon">🎧</h5>
+                        <h5 class="fw-bold display-6">Aksesoris —— Flash Sale Tiap Jumat</h5>
+                        <p>Headset, mouse, keyboard —— semua serba murah!</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="text-bg-success d-none d-md-block rounded-3 p-5">
+                            <h5 class="car-icon">📱</h5>
+                            <h5 class="fw-bold display-6">Gadget —— Flash Sale tiap tanggal ganda</h5>
+                            <p>Handphone, tablet, Smartwatch dll.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section> 
+
+        <h2 id="produk" class="mt-5 mb-4 fw-bold">Produk</h2>
+
+        <div class="container row"> 
+            <div class="col-4 me-auto mb-5">
+                <div class="card shadow">
+                    <img src="https://placehold.co/600x400/0d6efd/000000?text=💻" class="card-img-top" alt="">
+                    <span class="badge text-bg-danger me-auto ms-3 mt-2 p-2">Best Seller</span>
+                    <div class="card-body pt-2">
+                        <h4 class="card-title fw-bold">UltraBook Pro 14"</h4>
+                        <p class="card-text text-secondary">Intel Core i7, 16GB RAM, 512GB SSD, layar OLED 2K. Tipis, ringan, bertenaga</p>
+                        <span class="card-text card-price fw-bold">Rp 12.500.000</span>
+                    </div> 
+                    <button class="btn btn-primary me-3 ms-3 mb-2" onclick="showToast()">Add to Cart</button>
+                </div>
+            </div>
+                  
+            <div class="col-4 me-auto mb-5">
+                <div class="card shadow">
+                    <img src="https://placehold.co/600x400/198754/000000?text=📱" class="card-img-top" alt="">
+                    <span class="badge text-bg-info me-auto ms-3 mt-2 p-2">New</span>
+                    <div class="card-body pt-2">
+                        <h4 class="card-title fw-bold">NexPhone X5</h4>
+                        <p class="card-text text-secondary">Layar AMOLED 6.7", kamera 200MP, baterai 6000mAh, 5G, Fotografi level profesional.</p>
+                        <span class="card-text card-price fw-bold">Rp 7.200.000</span>
+                    </div> 
+                    <button class="btn btn-success me-3 ms-3 mb-2" onclick="showToast()">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="col-4 me-auto mb-5">
+                <div class="card shadow">
+                    <img src="https://placehold.co/600x400/ffc107/000000?text=🎧" class="card-img-top" alt="">
+                    <span class="badge text-bg-success me-auto ms-3 mt-2 p-2">Sale -30%</span>
+                    <div class="card-body pt-2">
+                        <h4 class="card-title fw-bold">SoundMax Pro ANC</h4>
+                        <p class="card-text text-secondary">Noise cancelling aktif, 40 jam baterai, audio Hi-Res, koneksi multipoint hingga 3 perangkat.</p>
+                        <span class="card-text card-price fw-bold">Rp 1.400.000 <span class="text-decoration-line-through text-muted">Rp 2.000.000</span></span>
+                    </div>
+                    <button class="btn btn-warning me-3 ms-3 mb-2 " onclick="showToast()">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    
+        <h2 id="faq" class="mt-5 mb-4 fw-bold">FAQ</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Berapa lama estimasi pengiriman?</button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Pengiriman dalam kota memakan waktu 1-2 hari kerja. Pengiriman luar kota 3-5 hari kerja tergantung lokasi. Kami menggunakan kurir terpercaya seperti JNE, J&T, dan SiCepat.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Apakah produk yang dijual bergaransi resmi?
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Ya! Semua produk kami memiliki garansi resmi dari distributor. Laptop dan smartphone mendapatkan garansi 1 tahaun, sementara aksesoris 6 bulan.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        Bagaimana cara melakukan retur produk?
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Retur dapat dilakukan dalam 7 hari setelah produk diterima, selama produk masih dalam kondisi asli dan belum digunakan. Hubungi cutomer service kami melalui email atau WhatsApp.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="shadow container row my-5 rounded-3 p-3" id="about">
+            <div class="row align-items-center">
+                <h2 class="fw-bold mb-3">About TechStore</h2>
+                <p class="text-secondary">TechStore adalah toko gadget online terpercaya yang menyediakan produk elektronik berkualitas dengan harga kompetitid. Berdiri sejak 2019, kami telah melayani lebih dari 50.000 pelanggan di seluruh Indonesia.</p>
+                <p class="text-secondary">2572019 - Darren Nicholas Heng</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="notifToast" class="toast positionfixed bottom-0 end-0 p-3 z-index: 1100 text-bg-success">Produk berhasil ditambahkan ke keranjang!</div>
+
+    <script>
+        function showToast() {
+        const toastEl = document.getElementById('notifToast');
+        const toast = new bootstrap.Toast(toastEl);
+        toast.show();
+        }
+    </script>
+
+    <footer class="bg-dark text-white py-4 text-center">
+        <p>&copy; TechStore | 2572019 - Darren Nicholas Heng</p>
+    </footer>
+</body>
+</html>

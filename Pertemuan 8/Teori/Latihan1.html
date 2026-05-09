@@ -1,0 +1,24 @@
+<!--2572019-Darren Nicholas Heng-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="warna"></div>
+    <button onclick="ubah()">Generate</button>
+
+    <script>
+        var hex = "#"
+        var karakter = "1234567890ABCDEF";
+        for (var i = 0; i < 6; i++){
+            var idx = math.floor(Math.random() * 16);
+            hex += karakter[idx];
+        }
+        document.getElementById (warna).innerHTML = hex;
+    </script>
+    
+</body>
+</html>

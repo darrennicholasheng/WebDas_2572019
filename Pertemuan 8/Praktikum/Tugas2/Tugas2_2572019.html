@@ -1,0 +1,77 @@
+<!--2572019-Darren Nicholas Heng-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-2572019</title>
+    <style>
+        footer {
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Matematika</h1>
+    <p>Quiz ini merupakan sebuah tantangan untuk menguji kemampuan anda dalam berhitung.</p>
+    <p>Klik tombol di bawah untuk mulai mengerjakan soal matematika acak. Ketik "exit" atau tekan tombol "Cancel" untuk berhenti.</p>
+    
+    <button onclick="mulaiQuiz()">Mulai Quiz</button>
+    <p id="result"></p>
+    <p id="datetime"></p>
+    
+    <script>
+        function mulaiQuiz() {
+            var playerScore = 0;
+            var botScore = 0;
+            var jumlahsoal = 0;
+            var loop = true;
+
+            while (loop == true) {
+                var bil1 = Math.floor(Math.random() * 20) + 1;
+                var bil2 = Math.floor(Math.random() * 20) + 1;
+                const operator = ["+", "-", "*"];
+                var op = Math.floor(Math.random() * operator.length);
+                var soal = bil1 + " " + operator[op] + " " + bil2;
+                var jawaban = eval(soal);
+                var jawabUser = prompt("Berapa hasil dari " + soal + "?");
+                
+                if (jawabUser == null || jawabUser.toLowerCase() == "exit") {
+                    loop = false;
+                    break;
+                }
+
+                if (parseFloat(jawabUser) == jawaban) {
+                    alert("Jawaban Benar");
+                    playerScore++
+                }
+                else {
+                    alert("Jawaban Salah! Jawaban yang benar adalah " + jawaban)
+                }
+                jumlahsoal++;
+            
+                
+            }
+
+            var confim = confirm("Quiz selesai! Apakah Anda ingin menampilkan hasil?");
+            
+            if (confim === true) {
+                document.getElementById("result").textContent = "Skor Akhir: " + playerScore + " / " + jumlahsoal;
+                
+            }
+
+            document.getElementById("datetime").innerHTML = "Quiz selesai pada: " + new Date().toLocaleString();
+
+            document.getElementById("result").textContent;
+            new Date(),toLocaleString();
+        }
+    </script>
+    <footer>
+        <p>2572019 - Darren Nicholas Heng</p>
+    </footer>
+</body>
+</html>

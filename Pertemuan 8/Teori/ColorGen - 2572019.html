@@ -1,0 +1,66 @@
+<!--2572019-Darren Nicholas Heng-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorGen-2572019</title>
+    <style>
+        body {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 0.5s ease;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 30px;
+            font-family: Arial;
+        }
+
+        button {
+            padding : 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 5px;
+        }
+
+        .kotak {
+            border: 1px solid #000;
+            padding: 20px;
+            margin-top: 200px;
+            background-color: white;
+            border-radius: 5px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="kotak">
+        <p>Color Generator</p>
+        <button onclick="ubah()">Generate</button>
+        <div id="warna"></div>
+
+        <script>
+            function ubah() {
+                var hex = "#"
+                var karakter = "1234567890ABCDEF";
+
+                for (var i = 0; i < 6; i++) {
+                    var idx = Math.floor(Math.random() * 16);
+                    hex += karakter[idx];
+                }
+                var box = document.getElementById("warna");
+                box.innerHTML = hex;
+                document.body.style.backgroundColor = hex;
+                
+
+            }
+            
+        </script>
+    </div>    
+</body>
+</html>

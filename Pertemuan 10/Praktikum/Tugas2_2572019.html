@@ -1,0 +1,110 @@
+<!--2572019-Darren Nicholas Heng-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator-2572019</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            width: 400px;
+            padding: 10px;
+            margin: 50px auto;
+        }
+
+        .hasil {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        select, input {
+            padding: 5px;
+            width: 98%;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <h2>Temperature Calculator</h2>
+        <h4>Dari Suhu:</h4>
+        <select id="input-unit">
+            <option value="Celsius">Celsius (°C)</option>
+            <option value="Fahrenheit">Fahrenheit (°F)</option>
+            <option value="Kelvin">Kelvin (K)</option>
+        </select>
+        
+        <br>
+        <h4>Nilai:</h4>
+        <input type="number" id="input-value" placeholder="Masukkan angka..">
+        <br>
+        
+        <div class="hasil">
+            <h4>Hasil Konversi:</h4>
+            <div id="output"></div>
+        </div>
+
+        <footer>
+        <p>&copy; 2026 [2572019] [Darren Nicholas Heng]. All rights reserved.</p>
+        </footer>    
+    </div>
+    
+    
+    <script>
+        const inputUnit = document.getElementById("input-unit");
+        const inputNilai = document.getElementById("input-value");
+        const divHasil = document.getElementById("output");
+
+        // Commit awal variable
+        function calculate() {
+            let suhu = parseFloat(inputNilai.value); 
+            let satuanAwal = inputUnit.value;
+            let results = [];
+            const units = ['Celsius', 'Fahrenheit', 'Kelvin'];
+            if (isNaN(suhu)) {
+                document.getElementById("output").innerHTML = "Masukkan nilai untuk melilhat hasil.";
+                return;
+            } else if (inputUnit.value === "Celsius") {
+                results[0] = suhu; // Celsius
+                results[1] = (suhu * 9/5) + 32; // Fahrenheit
+                results[2] = parseFloat(suhu) + 273; // Kelvin'
+            } else if (inputUnit.value === "Fahrenheit") {
+                results[0] = (suhu - 32) * 5/9; // Celsius
+                results[1] = suhu; // Fahrenheit
+                results[2] = ((suhu - 32) * 5/9) + 273; // Kelvin
+            } else if (inputUnit.value === "Kelvin") {
+                results[0] = suhu - 273; // Celsius
+                results[1] = ((suhu - 273) * 9/5) + 32; // Fahrenheit
+                results[2] = suhu; // Kelvin
+            }
+
+            divHasil.innerHTML = "";
+            results.forEach(function(item, index) {
+                divHasil.innerHTML += item.toFixed(2) + " " + units[index] + "<br>";
+            });   
+        }
+        // Penggunakan event Listener
+        addEventListener('input', calculate);
+        addEventListener('change', calculate);
+        </script>
+</body>
+</html>

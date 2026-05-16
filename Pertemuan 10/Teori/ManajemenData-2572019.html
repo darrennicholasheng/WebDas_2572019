@@ -1,0 +1,115 @@
+<!--2572019-Darren Nicholas Heng-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManajemenData - 2572019</title>
+    <style>
+        button {
+            margin: 5px
+        }
+    </style>
+</head>
+<body>
+    <h2>Manajemen Data Mahasiswa</h2>
+    <input type="text" id="input-nama" placeholder="Nama Mahasiswa">
+    <input type="number" id="input-nilai" placeholder="Nilai (0-100)">
+    <button id="btn-tambah">Tambah Data</button>
+
+    <br>
+    <button id="btn-semua">Semua</button>
+    <button id="btn-lulus">Lulus</button>
+    <button id="btn-tidak-lulus">Tidak Lulus</button>
+
+    <div id="kontainer-mahasiswa"></div>
+    <p id="ringkasan"></p>
+
+    <script>
+        let dataMahasiswa = [
+            { nama: "Andi", nilai: 80 },
+            { nama: "Budi", nilai: 45 },
+            { nama: "Citra", nilai: 62 }
+        ];
+        
+        function renderMahasiswa(data) {
+            const kontainer = document.getElementById("kontainer-mahasiswa");
+            kontainer.innerHTML = "";
+            
+            data.forEach(function(mhs) {
+                const kartu = document.createElement("div");
+                kartu.className =  "kartu";
+            
+                const nama = document.createElement("p");
+                nama.innerText = "Nama: " + mhs.nama;
+
+                const nilai = document.createElement("p");
+                nilai.innerText = "Nilai: " + mhs.nilai;
+
+                const status = document.createElement("p");
+                if (mhs.nilai >= 55) {
+                    status.innerText = "Status: Lulus";
+                    status.className = "lulus";
+                } else {
+                    status.innerText = "Status: Tidak Lulus";
+                    status.className = "tidak-lulus";
+                }
+
+                kartu.appendChild(nama);
+                kartu.appendChild(nilai);
+                kartu.appendChild(status);
+                kontainer.appendChild(kartu);
+            });
+
+            const ringkasan = document.getElementById("ringkasan");
+            ringkasan.innerText = "Menampilkan " + data.length + " mahasiswa";
+        };
+
+        document
+            .getElementById("btn-tambah")
+            .addEventListener("click", function () {
+                const nama = document.getElementById("input-nama").value;
+                const nilai = parseInt(document.getElementById("input-nilai").value);
+
+                if (nama === "" || isNaN(nilai)) {
+                    alert("Nama dan nilai harus diisi!");
+                    return;
+                }
+                
+                dataMahasiswa.push({ nama: nama, nilai: nilai});
+
+                document.getElementById("input-nama").value = "";
+                document.getElementById("input-nilai").value = "";
+
+                renderMahasiswa(dataMahasiswa);
+            });
+
+            document
+                .getElementById("btn-semua")
+                .addEventListener("click", function(){
+                    const dataSemua = dataMahasiswa.filter(function (mhs) {
+                        return mhs.nilai >= 0;
+                    });
+                    renderMahasiswa(dataSemua);
+                });
+
+            document
+                .getElementById("btn-lulus")
+                .addEventListener("click", function(){
+                    const dataLulus = dataMahasiswa.filter(function (mhs) {
+                        return mhs.nilai >= 60;
+                    });
+                    renderMahasiswa(dataLulus);
+                });
+
+            document
+                .getElementById("btn-tidak-lulus")
+                .addEventListener("click", function(){
+                    const DataTdkLulus = dataMahasiswa.filter(function(mhs){
+                        return mhs.nilai < 60;
+                    });
+                    renderMahasiswa(DataTdkLulus);
+                });
+    </script>
+</body>
+</html>

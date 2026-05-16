@@ -1,0 +1,128 @@
+<!--2572019-Darren Nicholas Heng-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game-2572019</title>
+
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        .message {
+            text-align: center;
+            padding: 10px;
+            font-size: 1.5rem;
+            height: 60px;
+        }
+
+        .stats {
+            text-align: center;
+            color: #ffeB3b;
+            font-size: 1.2rem;
+        }
+
+        .output {
+            width: 100vw;
+            height: calc(100vh - 150px);
+            position: relative;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            display: none;
+            line-height: 100px;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid white;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="message">Press the box to start!</div>
+    <div class="stats">Time: <span id="timer">30</span>s</div>
+    <div class="output" id="game-area">
+        <div id="target" class="box">START</div>
+    </div>
+    
+
+    <script>
+        const box = document.getElementById("target");
+        const timerLabel = document.getElementById("timer");
+        const message = document.querySelector(".message");
+        const gameArea = document.getElementById("game-area");
+
+        let timeLeft = 30;
+        let score = 0;
+        let isPlaying = false;
+        let gameInterval;
+
+        function randomNumbers(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        function addBox() {
+            const width = randomNumbers(50) + 45;
+            const height = randomNumbers(50) + 45; 
+            box.style.width = `${width}px`;
+            box.style.height = `${height}px`;
+
+            box.style.backgroundColor = "#" + Math.random().toString(16).substr(-6);
+
+            const maxX = gameArea.clientWidth - box.offsetWidth;
+            const maxY = gameArea.clientHeight - box.offsetHeight;
+            box.style.left = randomNumbers(maxX) + "px";
+            box.style.top = randomNumbers(maxY) + "px";
+
+            box.style.borderRadius = randomNumbers(50) + "%";
+        }
+
+        function endGame(){
+            clearInterval(gameInterval);
+            isPlaying = false;
+            message.innerText = `Total Clicks: ${score}`;
+            box.innerText = "AGAIN?";
+            box.style.top = "50%";
+            box.style.left = "50%";
+            box.style.transform = "translate(-50%, -50%)";
+        }
+
+        box.addEventListener("click", () => {
+            if(!isPlaying) {
+                isPlaying = true;
+                score = 0;
+                timeLeft = 30;
+                box.innerText = "";
+                message.innerText = "Click as fast as you can!";
+
+                addBox();
+
+                gameInterval = setInterval(() => {
+                    timeLeft--;
+                    timerLabel.innerText = timeLeft;
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            } else {
+                score++;
+                addBox();
+            }
+        });
+
+    </script>
+</body>
+</html>

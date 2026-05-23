@@ -1,0 +1,42 @@
+<!--2572019-Darren Nicholas Heng-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        div {
+            border: 1px solid tomato;
+            background-color: brown;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+
+</head>
+<body>
+    <button id="1">Click Me</button>
+    <div id="contoh">
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#1").click(function() {
+                //$("#contoh").toggle();
+                //$("#contoh").slideToggle('slow');
+                //$("#contoh").fadeToggle(3000);
+                //$("#contoh").fadeTo(1000, 0.5);
+                //$("#contoh").animate({height: 300}, 1000);
+                //$("#contoh").animate({width: 300}, 1000);
+                //$("#contoh").animate({height: 300}, 1000);
+                //$("#contoh").animate({width: 300}, 1000);
+                //$("#contoh").css("background-color", "salmon");
+                $("#contoh").css({"background-color": "salmon", border: "4px double lime"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
